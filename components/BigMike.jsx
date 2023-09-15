@@ -28,18 +28,18 @@ export default function BigMike() {
 
   return (
     <div className="w-[650px] h-full flex-none">
-      <Image className="fixed right-0 bottom-0" src="/blob-two.svg" width={700} height={500} alt="" />
-      <Image className="fixed right-0 bottom-0" src="/blob-one.svg" width={700} height={500} alt="" />
+      <Image className="fixed right-0 bottom-0" src="blob-two.svg" width={700} height={500} alt="" />
+      <Image className="fixed right-0 bottom-0" src="blob-one.svg" width={700} height={500} alt="" />
       <Image
         className="eye z-10 self-center fixed bottom-[510px] right-[210px]"
-        src="/images/googly-eye.png"
+        src="images/googly-eye.png"
         width={46}
         height={46}
         alt={''}
       />
       <Image
         className="eye z-10 self-center fixed bottom-[510px] right-[300px]"
-        src="/images/googly-eye.png"
+        src="images/googly-eye.png"
         width={46}
         height={46}
         alt={''}
@@ -47,7 +47,7 @@ export default function BigMike() {
       <Image
         id="eyes-anchor"
         className="z-[5] fixed bottom-0 right-0"
-        src="/images/binocular-michael-hd.png"
+        src="images/binocular-michael-hd.png"
         width={600}
         height={666}
         alt={''}

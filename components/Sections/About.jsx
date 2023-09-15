@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function About() {
   return (
     <div id="about" className="h-[100vh] w-full overflow-hidden">
-      <Image className="absolute left-0 -z-10" src="/thin-waves.svg" width={162} height={500} alt="" />
+      <Image className="absolute left-0 -z-10" src="thin-waves.svg" width={162} height={500} alt="" />
       <div className="ml-[260px] mt-9">
         <h1 className="text-6xl underline">About Me</h1>
         <p className="text-slate-600 text-xl max-w-4xl font-mono font-extrabold mt-3">
