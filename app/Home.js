@@ -1,5 +1,5 @@
 'use client';
-import BigMike from '@components/BigMike';
+import BigMike from 'components/BigMike';
 
 export default function Home() {
   return (
