@@ -9,7 +9,7 @@ export default function About() {
         <p className="text-slate-600 text-xl max-w-4xl font-mono font-extrabold mt-3">
           I love everything about coding. I love solving problems, the satisfaction of seeing my ideas come to life, and
           the creative solutions I get to develop. Outside of computing, I enjoy running 🏃‍♂️, linguistics 🗣️, and nature
-          🌳.
+          🌳. I also have a weird obsession with doing handstands, which I think needs to be made public knowledge.
         </p>
         <p className="text-slate-600 text-xl max-w-4xl font-mono font-extrabold mt-3">
           I am currently a student at the University of Central Missouri studying Computer Science, and looking to study

@@ -45,8 +45,8 @@ export default function Intro() {
           ^ Reset ^
         </button>
         <p className="text-slate-600 text-xl max-w-2xl font-mono font-extrabold mt-3">
-          I am a software engineer who is relentlessly curious and hardworking, driven by a passion for innovation and
-          an unwavering commitment to being a lifelong learner.
+          I am a software engineer who is relentlessly curious and hardworking, driven by a passion for innovation and a
+          commitment to being a lifelong learner.
         </p>
       </div>
     </div>

@@ -16,6 +16,8 @@ export default function BigMike() {
       const eye = document.getElementById('eyes-anchor');
       const eyes = document.querySelectorAll('.eye');
 
+      if (!eye) return;
+
       const rekt = eye.getBoundingClientRect();
       const centerX = rekt.left + rekt.width / 2;
       const centerY = rekt.top + rekt.height / 2 - 200;
@@ -24,6 +26,10 @@ export default function BigMike() {
         eye.style.transform = `rotate(${angle + 180}deg)`;
       });
     });
+
+    return () => {
+      document.removeEventListener('mousemove', () => {});
+    };
   }, []);
 
   return (

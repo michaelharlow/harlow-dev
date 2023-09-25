@@ -1,9 +1,9 @@
 'use client';
 
-import Image from 'next/image';
-import BigMike from 'components/BigMike';
-import Intro from 'components/Sections/Intro';
-import About from 'components/Sections/About';
+import BigMike from '@components/BigMike';
+import Intro from '@components/Sections/Intro';
+import About from '@components/Sections/About';
+import Projects from '@components/Sections/Projects';
 
 export default function Home() {
   return (
@@ -11,6 +11,7 @@ export default function Home() {
       <div className="w-full">
         <Intro />
         <About />
+        <Projects />
       </div>
       <BigMike />
     </div>
