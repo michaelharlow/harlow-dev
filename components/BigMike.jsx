@@ -33,7 +33,7 @@ export default function BigMike() {
   }, []);
 
   return (
-    <div className="w-[650px] h-full flex-none">
+    <div className="w-[650px] h-full flex-none hidden md:block">
       <Image className="fixed right-0 bottom-0" src="blob-two.svg" width={700} height={500} alt="" />
       <Image className="fixed right-0 bottom-0" src="blob-one.svg" width={700} height={500} alt="" />
       <Image
