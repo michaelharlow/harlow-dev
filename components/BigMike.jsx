@@ -53,9 +53,9 @@ export default function BigMike() {
       <Image
         id="eyes-anchor"
         className="z-[5] fixed bottom-0 right-0"
-        src="images/binocular-michael-hd.png"
+        src="images/binocular-michael.png"
         width={600}
-        height={666}
+        height={646}
         alt={''}
       />
     </div>

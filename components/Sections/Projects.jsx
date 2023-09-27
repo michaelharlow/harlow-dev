@@ -28,7 +28,7 @@ export default function Projects() {
             <h1 className="text-2xl font-bold truncate">Quotopia • A quote sharing social media</h1>
             <p className="text-xl text-slate-600 w-full">
               Quotopia was one of the first full stack projects I ever made. It uses Next.js and Tailwind in order to
-              serve beatiful content quickly with a small bundle size.
+              serve beautiful content quickly with a small bundle size.
             </p>
             <div className="flex gap-2 w-full h-8">
               <div className="text-xl text-white bg-black px-4 rounded-md">Next.js</div>
