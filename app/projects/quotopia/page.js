@@ -12,30 +12,38 @@ export default function Home() {
           quotopia-rosy.vercel.app
         </Link>
         <p className="text-lg mt-4 text-slate-500 italic">
-          EDI Translator is a tool that aims to simplify working with X12 standard EDI files.
+          Quotopia is a web app that allows users to create and share quotes.
         </p>
         {/* GOALS */}
         <h2 className="text-4xl font-signika font-bold mt-6">Goals</h2>
         <ul className="list-disc list-outside text-xl ml-6">
-          <li>Create a simple and intuituve form design that simplifies the feilds in the EDI format.</li>
-          <li>Allow for the data in an EDI form to be quickly and easily generated.</li>
-          <li>Simple testing for other developers by providing a new resource for EDI files.</li>
+          <li>Create a simple social media platform for users to create and share quotes.</li>
+          <li>Provide an intuitive and enjoyable UI/UX experince on all devices and platforms.</li>
+          <li>
+            Allow users to view quotes from other users and quickly search for specific quotes, authors, and users.
+          </li>
+          <li>Give users the ability to create an account and save their favorite quotes.</li>
         </ul>
         {/* TECH STACK */}
         <h2 className="text-4xl font-signika font-bold mt-6">Tools & Tech</h2>
-        <ul className="list-disc list-outside text-xl ml-6 columns-2">
-          <li>React</li>
-          <li>Material UI</li>
-          <li>Firebase</li>
-          <li>OAuth 2.0</li>
+        <ul className="list-disc list-outside text-xl ml-6 columns-2 w-1/2">
+          <li>Next.js 13</li>
+          <li>Tailwind</li>
+          <li>MongoDB</li>
+          <li>Mongoose</li>
         </ul>
-        {/* GOALS */}
+        {/* CHALLENGES */}
         <h2 className="text-4xl font-signika font-bold mt-6">Challenges</h2>
         <ul className="list-disc list-outside text-xl ml-6">
           <li>
-            This project was my first experience with OAuth 2.0 and Firebase. I had to learn a lot about how OAuth works
-            and how to implement it into my project. I also had to learn how to use Firebase and how to store data in
-            the cloud. I learned a lot about cloud computing and how to use it to my advantage.
+            Fixing bugs in page layouts was very frustrating at times. It was often difficult to track down what
+            component was casing the issue and figure out what was wrong with it. However, I learned a lot about the
+            ineer workings of CSS and got a better understanding of flex box layout systems.{' '}
+          </li>
+          <li>
+            After introducing a bug into my Schemas on MongoDB I struggled to retroactively change my schema structure
+            without redoing all the data that had been entered already. Fortunately, I learned a lot more about database
+            management from this little mistake and feel much more confident in managing database structures.
           </li>
         </ul>
       </div>

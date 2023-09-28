@@ -17,13 +17,15 @@ export default function Projects() {
           }}
           className="xl:flex bg-white rounded-2xl border-black border-4 border-r-[12px] border-b-[12px] text-ellipsis cursor-pointer w-full hover:-translate-y-2 transition-all active:border-r-8 active:border-b-8 active:-translate-y-1 active:translate-x-1"
         >
-          <Image
-            className="rounded-xl border-slate-400 border-2 m-3"
-            src="images/quotopia.png"
-            width={300}
-            height={300}
-            alt="Screenshot of Quotopia application home page"
-          />
+          <div className="flex items-center justify-center mx-3 my-2 flex-shrink-0">
+            <Image
+              className="rounded-xl border-slate-400 border-2"
+              src="images/quotopia.png"
+              width={300}
+              height={300}
+              alt="Screenshot of Quotopia application home page"
+            />
+          </div>
           <div className="my-4 mx-4 w-full max-w-2xl overflow-hidden">
             <h1 className="text-2xl font-bold truncate">Quotopia • A quote sharing social media</h1>
             <p className="text-xl text-slate-600 w-full">
@@ -42,13 +44,15 @@ export default function Projects() {
           }}
           className="xl:flex mt-6 bg-white rounded-2xl border-black border-4 border-r-[12px] border-b-[12px] text-ellipsis cursor-pointer w-full hover:-translate-y-2 transition-all active:border-r-8 active:border-b-8 active:-translate-y-1 active:translate-x-1"
         >
-          <Image
-            className="rounded-xl border-slate-400 border-2 m-3"
-            src="images/portfolio.png"
-            width={300}
-            height={300}
-            alt="Screenshot of My portfolio application home page"
-          />
+          <div className="flex items-center justify-center mx-3 my-2 flex-shrink-0">
+            <Image
+              className="rounded-xl border-slate-400 border-2"
+              src="images/portfolio.png"
+              width={300}
+              height={300}
+              alt="Screenshot of My portfolio application home page"
+            />
+          </div>
           <div className="my-4 mx-4 w-full max-w-2xl overflow-hidden">
             <h1 className="text-2xl font-bold truncate">My Portfolio • It&apos;s me!</h1>
             <p className="text-xl text-slate-600 w-full">
@@ -67,13 +71,15 @@ export default function Projects() {
           }}
           className="xl:flex mt-6 bg-white rounded-2xl border-black border-4 border-r-[12px] border-b-[12px] text-ellipsis cursor-pointer w-full hover:-translate-y-2 transition-all active:border-r-8 active:border-b-8 active:-translate-y-1 active:translate-x-1"
         >
-          <Image
-            className="rounded-xl border-slate-400 border-2 m-3"
-            src="images/pen.png"
-            width={300}
-            height={300}
-            alt="Screenshot of My portfolio application home page"
-          />
+          <div className="flex items-center justify-center mx-3 my-2 flex-shrink-0">
+            <Image
+              className="rounded-xl border-slate-400 border-2"
+              src="images/pen.png"
+              width={300}
+              height={300}
+              alt="Screenshot of My portfolio application home page"
+            />
+          </div>
           <div className="my-4 mx-4 w-full max-w-2xl overflow-hidden">
             <h1 className="text-2xl font-bold truncate">Edi Translation • Tool for EDI files</h1>
             <p className="text-xl text-slate-600 w-full">
