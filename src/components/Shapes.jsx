@@ -9,6 +9,7 @@ import {
   useGLTF,
 } from "@react-three/drei";
 import * as THREE from "three";
+import { motion } from "framer-motion-3d";
 
 function Box(props) {
   // This reference will give us direct access to the mesh
@@ -35,7 +36,7 @@ function Box(props) {
 }
 
 export function Tree(props) {
-  const { nodes, materials } = useGLTF("assets/pine-tree2.glb");
+  const { nodes, materials } = useGLTF("assets/pine-tree.glb");
   return (
     <group {...props} dispose={null}>
       <group scale={0.332}>
@@ -81,12 +82,18 @@ export default function Shapes() {
           decay={0}
           intensity={Math.PI}
         />
-        <Float speed={2} rotationIntensity={2}>
-          <Box position={[-0.1, 0, 0]} />
-        </Float>
-        <Tree position={[1, -1, 1]} scale={0.6} rotation={[0, 137, 0]} />
-        <Tree position={[-1, -1, -1]} scale={0.7} rotation={[0, 90, 0]} />
-        <Tree position={[-1.5, -1, 0]} scale={0.6} rotation={[0, 0, 0]} />
+        <motion.group
+          initial={{ scale: 0.0 }}
+          animate={{ scale: 1.0 }}
+          transition={{ type: "spring" }}
+        >
+          <Float speed={2} rotationIntensity={2}>
+            <Box position={[-0.1, 0, 0]} />
+          </Float>
+          <Tree position={[1, -1, 1]} scale={0.6} rotation={[0, 137, 0]} />
+          <Tree position={[-1, -1, -1]} scale={0.7} rotation={[0, 90, 0]} />
+          <Tree position={[-1.5, -1, 0]} scale={0.6} rotation={[0, 0, 0]} />
+        </motion.group>
       </Canvas>
     </div>
   );
