@@ -1,11 +1,19 @@
+"use client";
+
 import Link from "next/link";
+import { MenuToggle } from "./MenuToggle";
+
+import { motion, useCycle } from "framer-motion";
 
 export default function Navbar() {
+  const [isOpen, toggleOpen] = useCycle(false, true);
+
   return (
     <header className="max-w-7xl m-auto">
-      <nav className="flex justify-between items-center box-border p-4 m-4 rounded-2xl border-black border-4 bg-slate-50 text-black sticky top-4">
-        <h1 className="text-2xl font-bold">@Harlow</h1>
-        <ul className="flex space-x-4">
+      <nav className="flex justify-between my-4 mx-8 items-center sticky top-4">
+        <h1 className="text-2xl font-bold">Harlow.dev</h1>
+        {/* Desktop */}
+        <ul className="sm:flex hidden space-x-4">
           <li>
             <Link href="/" className="font-bold text-lg">
               Home
@@ -22,6 +30,15 @@ export default function Navbar() {
             </Link>
           </li>
         </ul>
+
+        {/* Mobile */}
+        <motion.div
+          className="sm:hidden flex"
+          animate={isOpen ? "open" : "closed"}
+          initial={false}
+        >
+          <MenuToggle toggle={() => toggleOpen()} />
+        </motion.div>
       </nav>
     </header>
   );
