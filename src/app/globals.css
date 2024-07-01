@@ -21,6 +21,10 @@ body {
   height: 100%;
 }
 
+::selection {
+  background: #9b86f8;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
