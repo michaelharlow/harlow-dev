@@ -16,6 +16,17 @@
   }
 }
 
+.post-container {
+  p {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  ol > li::before {
+    content: counter(list-item) ". ";
+  }
+}
+
 body {
   background: #fff8e7; /* Dark #100f35 */
   height: 100%;
@@ -27,14 +38,19 @@ body {
 
 pre {
   border-radius: 10px;
+  padding: 5px 0px;
+  overflow-x: auto;
 }
 
 code {
   counter-reset: line;
-  border-radius: 15px;
 }
 
-code > [data-line]::before {
+code > [data-highlighted-line] {
+  background-color: #ffffff11;
+}
+
+code[data-line-numbers] > [data-line]::before {
   counter-increment: line;
   content: counter(line);
 
