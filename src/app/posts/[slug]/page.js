@@ -1,27 +1,20 @@
-import fs from "fs/promises";
-import matter from "gray-matter";
+import { getPost } from "@/util/get-posts";
+
 import rehypePrettyCode from "rehype-pretty-code";
 
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { Noto_Sans_Mono } from "next/font/google";
-
-const noto_sans_mono = Noto_Sans_Mono({ subsets: ["latin"] });
 
 export default async function Page({ params }) {
-  const file = await fs.readFile(`./posts/${params.slug}.mdx`);
-  const markdown = await file.toString();
-  const { data, content } = matter(markdown);
+  const { title, body } = await getPost(params.slug);
 
   return (
-    <div
-      className={`m-auto max-w-3xl sm:px-0 px-8 ${noto_sans_mono.className}`}
-    >
-      <h1 className="sm:text-6xl text-2xl leading-snug font- font-semibold my-12 text-left">
-        {data.title}
+    <div className={`m-auto max-w-3xl sm:px-0 px-8`}>
+      <h1 className="sm:text-5xl text-2xl sm:leading-snug font-semibold my-12 text-left">
+        {title}
       </h1>
-      <main>
+      <main className="post-container">
         <MDXRemote
-          source={content}
+          source={body}
           options={{
             mdxOptions: {
               remarkPlugins: [],
