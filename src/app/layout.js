@@ -1,9 +1,7 @@
-import { Noto_Serif } from "next/font/google";
 import "./globals.css";
 
+import { notoSansMono } from "@/util/fonts";
 import Navbar from "@/components/Navbar";
-
-const inter = Noto_Serif({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Harlow.dev",
@@ -13,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${notoSansMono.className}`}>
         <Navbar />
         {children}
       </body>
