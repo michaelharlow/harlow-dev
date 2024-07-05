@@ -4,6 +4,7 @@ import Link from "next/link";
 
 export default async function Page() {
   const posts = await getPosts();
+  posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   return (
     <main className={"m-auto max-w-3xl sm:px-0 px-8"}>
@@ -12,12 +13,12 @@ export default async function Page() {
       </h1>
       <ul>
         {posts.map((post) => (
-          <li key={post.slug}>
+          <li key={post.slug} className="flex justify-between hover:underline">
             <Link href={`/posts/${post.slug}`}>{post.title}</Link>
+            <time dateTime={post.date}>{post.date}</time>
           </li>
         ))}
       </ul>
-      <h1>Posts Page</h1>
     </main>
   );
 }
