@@ -1,11 +1,14 @@
 "use client";
 
-import { motion, useCycle } from "framer-motion";
+import { motion } from "framer-motion";
+import { notoSerif } from "@/util/fonts";
 
 export default function HeroName() {
   return (
     <motion.div>
-      <h1 className="md:text-8xl xl:text-9xl text-7xl font-bold text-center">
+      <h1
+        className={`md:text-8xl xl:text-9xl text-7xl font-bold sm:text-center sm:px-0 px-4  ${notoSerif.className}`}
+      >
         <SplitLetters text="Michael" />
         <span className="sm:inline-block hidden">&nbsp;</span>
         <SplitLetters text="Harlow" />
@@ -14,7 +17,7 @@ export default function HeroName() {
         initial={{ opacity: 0, scale: 0.9, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ delay: 1, ease: "easeOut" }}
-        className="sm:text-xl mx-auto my-4 max-w-prose sm:text-center xl:text-wrap text-balance sm:px-0 px-4"
+        className="sm:text-lg mx-auto my-4 max-w-prose sm:text-center xl:text-wrap text-pretty sm:px-0 px-4"
       >
         <motion.span>Hello</motion.span>, I am a software engineer and student.
         I am passionate about creating exciting and engaging projects, learning
