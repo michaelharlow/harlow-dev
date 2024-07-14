@@ -6,7 +6,7 @@ async function getPosts() {
   const files = await fs.readdir("./posts");
 
   const posts = files.map(async (filename) => {
-    const file = await fs.readFile(`./posts/${filename}`);
+    const file = await fs.readFile(process.cwd() + `/posts/${filename}`);
     const markdown = await file.toString();
     const { data, content } = matter(markdown);
     return {
