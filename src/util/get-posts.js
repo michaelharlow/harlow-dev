@@ -3,7 +3,7 @@ import matter from "gray-matter";
 
 //TODO cache
 async function getPosts() {
-  const files = await fs.readdir(process.cwd() + "/posts");
+  const files = await fs.readdir("./posts");
 
   const posts = files.map(async (filename) => {
     const file = await fs.readFile(
