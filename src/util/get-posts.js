@@ -1,12 +1,15 @@
-import fs from "fs/promises";
+import { promises as fs } from "fs";
 import matter from "gray-matter";
 
 //TODO cache
 async function getPosts() {
-  const files = await fs.readdir("./posts");
+  const files = await fs.readdir(process.cwd() + "/posts");
 
   const posts = files.map(async (filename) => {
-    const file = await fs.readFile(process.cwd() + `/posts/${filename}`);
+    const file = await fs.readFile(
+      process.cwd() + `/posts/${filename}`,
+      "utf-8"
+    );
     const markdown = await file.toString();
     const { data, content } = matter(markdown);
     return {
