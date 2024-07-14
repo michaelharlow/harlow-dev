@@ -7,10 +7,10 @@ export default function HeroName() {
   return (
     <motion.div>
       <h1
-        className={`md:text-8xl xl:text-9xl text-7xl font-bold sm:text-center sm:px-0 px-4  ${notoSerif.className}`}
+        className={`md:text-8xl xl:text-9xl text-4xl font-bold sm:text-center sm:px-0 px-4  ${notoSerif.className}`}
       >
         <SplitLetters text="Michael" />
-        <span className="sm:inline-block hidden">&nbsp;</span>
+        <span className="">&nbsp;</span>
         <SplitLetters text="Harlow" />
       </h1>
       <motion.p

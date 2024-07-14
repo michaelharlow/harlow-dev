@@ -25,10 +25,18 @@
   ol > li::before {
     content: counter(list-item) ". ";
   }
+
+  a {
+    color: #ff00ff;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
 }
 
 body {
-  background: #fff8e7; /* Dark #100f35 */
+  background: #fffcf5; /* Dark #100f35 */
   height: 100%;
 }
 

@@ -4,12 +4,14 @@ import rehypePrettyCode from "rehype-pretty-code";
 
 import { MDXRemote } from "next-mdx-remote/rsc";
 
+import { ArrowUpRight } from "lucide-react";
+
 export default async function Page({ params }) {
   const { title, body } = await getPost(params.slug);
 
   return (
     <div className={`m-auto max-w-3xl sm:px-0 px-8`}>
-      <h1 className="sm:text-5xl text-2xl sm:leading-snug font-semibold my-12 text-left">
+      <h1 className="sm:text-4xl text-2xl sm:leading-snug font-semibold my-12 text-left">
         {title}
       </h1>
       <main className="post-container">
@@ -22,7 +24,7 @@ export default async function Page({ params }) {
                 [
                   rehypePrettyCode,
                   {
-                    theme: "one-dark-pro", //this syntax highlighting was such a pain in the bum, I'm writing my own post about making this work for sure :(
+                    theme: "one-dark-pro",
                   },
                 ],
               ],
@@ -30,6 +32,22 @@ export default async function Page({ params }) {
           }}
         />
       </main>
+      <div className="flex flex-row gap-x-12 mt-3 justify-center mb-8">
+        <a
+          className="hover:underline group flex flex-row gap-x-1 items-center"
+          href="https://github.com/michaelharlow"
+        >
+          Github
+          <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </a>
+        <a
+          className="hover:underline group flex flex-row gap-x-1 items-center"
+          href="https://www.linkedin.com/in/michaelaharlow/"
+        >
+          linkedin
+          <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </a>
+      </div>
     </div>
   );
 }
