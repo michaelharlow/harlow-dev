@@ -1,0 +1,121 @@
+---
+"title": "Creating Beautiful Code in Markdown and NextJS"
+"slug": "mdx-code-block"
+"date": "2024-7-13"
+---
+
+I struggled to get the code blocks in my blog looking exactly how I wanted when creating this site, so I decided to share exactly how I went about styling them.
+
+firstly you must install next/mdx, rehype-pretty-code, and a variety of dependencies:
+
+```bash
+npm install @next/mdx @mdx-js/loader @mdx-js/react rehype-pretty-code shiki
+```
+
+Once everything has been installed we can begin to write the code that reads our MDX files (Markdown with JSX elements) and applies our styling to the code blocks.
+
+In this example, I am retrieving the markdown files from a local directory using the file system in node.
+
+```js showLineNumbers
+async function getPosts() {
+  const files = await fs.readdir("./posts");
+
+  const posts = files.map(async (filename) => {
+    const file = await fs.readFile(`./posts/${filename}`);
+    return await file.toString();
+  });
+
+  return Promise.all(posts);
+}
+
+async function getPost(slug) {
+  const posts = await getPosts();
+  return posts.find((post) => post.slug === slug);
+}
+```
+
+Once we have received our posts we will use the **MDXRemote** element to render the markdown into html.
+
+```js showLineNumbers
+import { MDXRemote } from "next-mdx-remote/rsc";
+
+export default async function Page({ params }) {
+  const body = await getPost(params.slug);
+
+  return (
+    <main className="post-container">
+      <MDXRemote source={body} />
+    </main>
+  );
+}
+```
+
+Now that we can render our markdown files into HTML on the site, we need to configure it to run through rehype-pretty-code. We do this by passing it into the **MDXRemote** element's option prop. Additionally we are setting the theme we want using shiki - a list of packaged themes can be found [here](https://github.com/shikijs/textmate-grammars-themes/tree/main/packages/tm-themes).
+
+```js showLineNumbers
+import { MDXRemote } from "next-mdx-remote/rsc";
+import rehypePrettyCode from "rehype-pretty-code";
+
+export default async function Page({ params }) {
+  const body = await getPost(params.slug);
+
+  return (
+    <main className="post-container">
+      <MDXRemote
+        source={body}
+        options={{
+          mdxOptions: {
+            remarkPlugins: [],
+            rehypePlugins: [
+              [
+                rehypePrettyCode,
+                {
+                  theme: "one-dark-pro", //Enter whatever them you'd like here
+                },
+              ],
+            ],
+          },
+        }}
+      />
+    </main>
+  );
+}
+```
+
+Now we can add custom styling to the code blocks as detailed in the rehype-prety-code [documentation](https://rehype-pretty.pages.dev/#styles). below are some examples of what I did with.
+
+The following CSS snippet shows the required theming to get line numbers to show in your code boxes:
+
+```css showLineNumbers
+code {
+  counter-reset: line;
+}
+
+code > [data-highlighted-line] {
+  background-color: #ffffff11;
+}
+
+code > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+
+  /* Other styling */
+  display: inline-block;
+  width: 1rem;
+  margin-right: 1rem;
+  text-align: right;
+  color: gray;
+}
+
+code[data-line-numbers-max-digits="2"] > [data-line]::before {
+  width: 2rem;
+}
+
+code[data-line-numbers-max-digits="3"] > [data-line]::before {
+  width: 3rem;
+}
+```
+
+Hopefully, this helps you to get the ball running on your own simple markdown blog in NextJS!
+
+_Happy Coding!_
