@@ -14,7 +14,6 @@ export async function generateStaticParams() {
 
 export default async function Page({ params }) {
   const { title, body } = await getPost(params.slug);
-  console.log(params.slug);
 
   return (
     <div className={`m-auto max-w-3xl sm:px-0 px-8`}>
