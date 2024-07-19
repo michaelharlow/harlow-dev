@@ -1,4 +1,4 @@
-import { getPost } from "@/util/get-posts";
+import { getPost, getPosts } from "@/util/get-posts";
 
 import rehypePrettyCode from "rehype-pretty-code";
 
@@ -6,8 +6,14 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 
 import { ArrowUpRight } from "lucide-react";
 
-export default async function Page({ params }) {
-  const { title, body } = await getPost(params.slug);
+export async function generateStaticParams() {
+  const posts = await getPosts();
+
+  return posts.map((post) => ({ slug: post.slug }));
+}
+
+export default function Page({ params }) {
+  const { title, body } = getPost(params.slug);
 
   return (
     <div className={`m-auto max-w-3xl sm:px-0 px-8`}>

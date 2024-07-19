@@ -1,9 +1,10 @@
 import { promises as fs } from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { cache } from "react";
 
 //TODO cache
-async function getPosts() {
+const getPosts = cache(async () => {
   const directory = path.join(process.cwd(), "posts");
   const files = await fs.readdir(directory);
 
@@ -18,7 +19,7 @@ async function getPosts() {
   });
 
   return Promise.all(posts);
-}
+});
 
 async function getPost(slug) {
   const posts = await getPosts();
