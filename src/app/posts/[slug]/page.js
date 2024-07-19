@@ -12,8 +12,9 @@ export async function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
 }
 
-export default function Page({ params }) {
-  const { title, body } = getPost(params.slug);
+export default async function Page({ params }) {
+  const { title, body } = await getPost(params.slug);
+  console.log(params.slug);
 
   return (
     <div className={`m-auto max-w-3xl sm:px-0 px-8`}>
