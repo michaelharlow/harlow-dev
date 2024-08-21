@@ -4,6 +4,8 @@ import rehypePrettyCode from "rehype-pretty-code";
 
 import { MDXRemote } from "next-mdx-remote/rsc";
 
+import OutLink from "@/components/MDX/OutLink";
+
 import { ArrowUpRight } from "lucide-react";
 
 export async function generateStaticParams() {
@@ -17,12 +19,13 @@ export default async function Page({ params }) {
 
   return (
     <div className={`m-auto max-w-3xl sm:px-0 px-8`}>
-      <h1 className="sm:text-4xl text-2xl sm:leading-snug font-semibold my-12 text-left">
+      <h1 className="sm:text-4xl text-2xl sm:leading-snug font-extrabold my-12 text-left">
         {title}
       </h1>
       <main className="post-container">
         <MDXRemote
           source={body}
+          components={{ a: OutLink }}
           options={{
             mdxOptions: {
               remarkPlugins: [],
